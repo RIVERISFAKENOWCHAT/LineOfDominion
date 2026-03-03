@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crownfall</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <h1>Crownfall</h1>
+        <div class="controls">
+          <label>
+            AI Difficulty
+            <select id="aiDifficulty">
+              <option value="easy">Easy</option>
+              <option value="medium" selected>Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </label>
+          <button id="startBtn">Start Match</button>
+          <button id="resetDeckBtn">Reset Deck</button>
+        </div>
+      </header>
+
+      <section id="deckbuilder" class="panel">
+        <h2>Deck Builder (20 cards)</h2>
+        <p class="muted">Choose exactly 20 cards from the pool below. Recommended: 10 Units, 8 Spells, 2 Relics.</p>
+        <div class="deck-summary" id="deckSummary"></div>
+        <div class="card-pool" id="cardPool"></div>
+      </section>
+
+      <section id="game" class="hidden">
+        <div class="enemy-zone panel dimmer" id="enemyZone">
+          <div class="info-row">
+            <div>Enemy HP: <strong id="enemyHp">30</strong></div>
+            <div>Energy: <strong id="enemyEnergy">0</strong></div>
+            <div>Deck: <strong id="enemyDeckCount">0</strong></div>
+            <div>Relic: <strong id="enemyRelic">—</strong></div>
+          </div>
+          <div class="lanes" id="enemyLanes"></div>
+        </div>
+
+        <div class="divider panel">
+          <strong id="turnLabel">Your Turn</strong>
+          <p id="logLine" class="muted">Prepare your first move.</p>
+        </div>
+
+        <div class="player-zone panel" id="playerZone">
+          <div class="lanes" id="playerLanes"></div>
+        </div>
+
+        <div class="hand-zone panel">
+          <div class="info-row">
+            <div>❤️ HP: <strong id="playerHp">30</strong></div>
+            <div>⚡ Energy: <strong id="playerEnergy">0 / 10</strong></div>
+            <div>📚 Deck: <strong id="playerDeckCount">0</strong></div>
+            <div>💎 Relic: <strong id="playerRelic">—</strong></div>
+            <button id="endTurnBtn">End Turn</button>
+          </div>
+          <div class="hand" id="playerHand"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
